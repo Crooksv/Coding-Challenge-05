@@ -37,3 +37,23 @@ function calculateTaxes(grossPay) {
 
 //deducts 15% tax
 
+function processPayroll(employee) {
+  const { name, hourlyRate, hoursWorked } = employee;
+
+  const basePay = calculateBasePay(hourlyRate, hoursWorked);
+  const overtimePay = calculateOvertimePay(hourlyRate, hoursWorked);
+  const grossPay = roundToCents(basePay + overtimePay);
+  const taxes = calculateTaxes(grossPay);
+  const netPay = roundToCents(grossPay - taxes);
+
+  return {
+    name,
+    basePay,
+    overtimePay,
+    grossPay,
+    netPay,
+  };
+}
+
+//process payroll & returns name, base pay, overtime pay, gross pay, net pay
+
