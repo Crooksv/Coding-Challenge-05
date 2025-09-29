@@ -9,3 +9,18 @@ const employees = [
 ];
 
 //employee objects
+
+function roundToCents(amount) {
+  return Math.round((amount + Number.EPSILON) * 100) / 100
+};
+
+//rounds to 2 decimal places
+
+function calculateBasePay(rate, hours) {
+  const baseHours = Math.min(hours, 40)
+  return roundToCents(baseHours * rate)
+};
+
+//pay for 40 hours
+
+
