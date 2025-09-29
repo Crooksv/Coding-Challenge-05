@@ -23,4 +23,9 @@ function calculateBasePay(rate, hours) {
 
 //pay for 40 hours
 
+function calculateOvertimePay(rate, hours) {
+  const overtimeHours = Math.max(hours - 40, 0);
+  return roundToCents(overtimeHours * rate * 1.5);
+};
 
+//overtime calculation
