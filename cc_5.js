@@ -57,3 +57,9 @@ function processPayroll(employee) {
 
 //process payroll & returns name, base pay, overtime pay, gross pay, net pay
 
+const payrollResults = employees.map(processPayroll);
+for (const p of payrollResults) {
+  console.log(p);
+}
+
+//processes all employees & logs results to console
