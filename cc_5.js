@@ -29,3 +29,11 @@ function calculateOvertimePay(rate, hours) {
 };
 
 //overtime calculation
+
+function calculateTaxes(grossPay) {
+  const TAX_RATE = 0.15;
+  return roundToCents(grossPay * TAX_RATE);
+}
+
+//deducts 15% tax
+
